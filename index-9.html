@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bússola Financeira — Compare Empréstimos e Condições</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16233B;
+    --ink-soft: #3C4A63;
+    --paper: #F6F4EE;
+    --paper-raised: #FFFFFF;
+    --line: #DAD5C7;
+    --gold: #A9822E;
+    --gold-deep: #7C5F20;
+    --sponsor-bg: #EDE7D6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 { font-family: 'Source Serif 4', serif; margin: 0; }
+
+  a { color: inherit; }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* Top disclosure bar — always visible, not hidden in fine print */
+  .disclosure-bar {
+    background: var(--ink);
+    color: #E7E2D2;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+  .disclosure-bar strong { color: #fff; }
+
+  header.hero {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow-plain {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+    max-width: 14ch;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .hero p.sub {
+    margin-top: 18px;
+    max-width: 52ch;
+    color: var(--ink-soft);
+    font-size: 17px;
+  }
+
+  section.offers { padding: 48px 0 24px; }
+  section.offers h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  section.offers > p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 28px;
+  }
+
+  .offer-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .sponsor-tag {
+    display: inline-block;
+    background: var(--sponsor-bg);
+    color: var(--gold-deep);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+  }
+  .offer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .offer-name { font-size: 20px; font-weight: 600; font-family: 'Source Serif 4', serif; }
+  .offer-rate { color: var(--ink-soft); font-size: 14px; }
+  .offer-desc {
+    margin: 12px 0 18px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 60ch;
+  }
+  .offer-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .btn:hover { background: var(--gold-deep); }
+  .offer-note {
+    font-size: 13px;
+    color: #7A7460;
+  }
+
+  section.how {
+    padding: 32px 0 48px;
+    border-top: 1px solid var(--line);
+    margin-top: 24px;
+  }
+  section.how h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  section.how p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    max-width: 68ch;
+    margin: 0 0 12px;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 40px;
+    font-size: 13px;
+    color: #7A7460;
+  }
+  footer p { max-width: 68ch; margin: 0 0 10px; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 30px; }
+    .offer-top { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclosure-bar">
+  Este site exibe <strong>conteúdo patrocinado</strong>. Podemos receber comissão pelas indicações feitas através dos links abaixo.
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow-plain">Bússola Financeira · Comparador de crédito pessoal</div>
+    <h1>Compare condições de empréstimo antes de decidir</h1>
+    <p class="sub">Reunimos ofertas de instituições parceiras para facilitar sua simulação. As condições finais — taxa, prazo e valor liberado — dependem sempre da análise de crédito de cada empresa.</p>
+  </header>
+
+  <section class="offers">
+    <h2>Ofertas em destaque</h2>
+    <p>Parcerias comerciais remuneradas. A ordem de exibição não representa recomendação ou avaliação de qualidade.</p>
+
+    <div class="offer-card">
+      <span class="sponsor-tag">Publicidade — parceria remunerada</span>
+      <div class="offer-top">
+        <span class="offer-name">SuperSim</span>
+        <span class="offer-rate">Crédito pessoal via Pix</span>
+      </div>
+      <p class="offer-desc">Empréstimo pessoal 100% online, com liberação via Pix após aprovação. Taxas e valores definidos conforme análise de crédito do solicitante.</p>
+      <div class="offer-actions">
+        <a class="btn" href="#" rel="sponsored noopener">Simular na SuperSim</a>
+        <span class="offer-note">Ganhamos comissão se você contratar por este link.</span>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <span class="sponsor-tag">Publicidade — parceria remunerada</span>
+      <div class="offer-top">
+        <span class="offer-name">Creditas</span>
+        <span class="offer-rate">Crédito consignado</span>
+      </div>
+      <p class="offer-desc">Linha de crédito consignado para colaboradores de empresas parceiras, com desconto direto em folha de pagamento.</p>
+      <div class="offer-actions">
+        <a class="btn" href="#" rel="sponsored noopener">Simular na Creditas</a>
+        <span class="offer-note">Ganhamos comissão se você contratar por este link.</span>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <span class="sponsor-tag">Publicidade — parceria remunerada</span>
+      <div class="offer-top">
+        <span class="offer-name">Simplic</span>
+        <span class="offer-rate">Crédito pessoal via Serasa</span>
+      </div>
+      <p class="offer-desc">Simulação de empréstimo pessoal através do marketplace de crédito da Serasa, com comparação de taxas entre instituições.</p>
+      <div class="offer-actions">
+        <a class="btn" href="#" rel="sponsored noopener">Simular na Simplic</a>
+        <span class="offer-note">Ganhamos comissão se você contratar por este link.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h3>Como este site funciona</h3>
+    <p>Somos remunerados por algumas das empresas listadas acima quando um visitante clica em um link e contrata um produto de crédito. Isso não altera o preço, a taxa ou as condições oferecidas a você — apenas define de onde vem parte da nossa receita.</p>
+    <p>As informações de taxas, prazos e valores são fornecidas pelas próprias instituições financeiras e podem mudar sem aviso prévio. Consulte sempre o Custo Efetivo Total (CET) antes de contratar qualquer empréstimo.</p>
+  </section>
+
+  <footer>
+    <p><strong>Bússola Financeira</strong> — este site é mantido de forma independente e não é uma instituição financeira.</p>
+    <p><strong>Aviso importante:</strong> este site não é uma instituição financeira e não concede empréstimos diretamente. Atuamos apenas como divulgadores de ofertas de terceiros, mediante comissão por indicação.</p>
+    <p>Crédito está sujeito a análise e aprovação da instituição responsável. Antes de contratar, avalie sua capacidade de pagamento e compare o CET de cada oferta.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
